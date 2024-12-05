@@ -1,0 +1,100 @@
+.accountReport-container {
+    .grid-leads {
+        grid-area: leads;
+    }
+
+    .grid-leadDemand {
+        grid-area: leadDemand;
+    }
+
+    .grid-leadSource {
+        grid-area: leadSource;
+    }
+
+    .grid-account {
+        grid-area: account;
+    }
+
+    .grid-accountRate {
+        grid-area: accountRate;
+    }
+
+    .grid-quotesAccount {
+        grid-area: quotesAccount;
+    }
+
+    .grid-salesAccount {
+        grid-area: salesAccount;
+    }
+
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    grid-template-areas: "leads leadDemand leadSource"
+    "account accountRate quotesAccount"
+    "salesAccount accountRate quotesAccount";
+
+    .group-tab-bage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px 0px;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    #root {
+        .accountReport-container {
+            grid-template-columns: repeat(2, minmax(300px, 50%));
+            grid-template-areas:
+                "leads leadDemand"
+                "leadSource account"
+                "accountRate quotesAccount"
+                "salesAccount quotesAccount"
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .accountReport-container {
+                grid-template-columns: repeat(3, minmax(300px, 100%));
+                grid-template-areas: "leads leadDemand leadSource"
+                    "account accountRate quotesAccount"
+                    "salesAccount accountRate quotesAccount";
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #root {
+        .accountReport-container {
+            grid-template-columns: repeat(1, minmax(200px, 100%));
+            grid-template-areas:
+                "leads"
+                "leadDemand"
+                "leadSource"
+                "account"
+                "accountRate"
+                "quotesAccount"
+                "salesAccount"
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .accountReport-container {
+                grid-template-columns: repeat(2, minmax(300px, 50%));
+                grid-template-areas:
+                    "leads leadDemand"
+                    "leadSource account"
+                    "accountRate quotesAccount"
+                    "salesAccount quotesAccount"
+            }
+        }
+    }
+}

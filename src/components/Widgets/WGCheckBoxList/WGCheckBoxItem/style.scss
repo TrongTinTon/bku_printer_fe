@@ -1,0 +1,168 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.itemSelect {
+	background: rgba(231, 243, 255, 0.8);
+}
+
+.labelCheckBoxIem {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.checkmark {
+		width: 25px;
+		height: 25px;
+		border: 2px solid #eee;
+		border-radius: 6px;
+		margin: 10px;
+		display: flex;
+
+		svg {
+			height: 10px;
+			margin: auto;
+			visibility: hidden;
+		}
+	}
+
+	input:checked ~ .checkmark {
+		background: #344767;
+	}
+
+	input:checked ~ .checkmark svg {
+		color: $white;
+		visibility: visible;
+	}
+
+	&_checkBoxItemContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 10px;
+		width: 100%;
+		min-width: 215px;
+
+		.checkboxIcon {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 25px;
+			width: 25px;
+		}
+
+		&_review {
+			display: flex;
+			align-items: center;
+			overflow: hidden;
+			width: 292px;
+
+			&_avatarContainer {
+				position: relative;
+				display: flex;
+				margin-right: 12px;
+
+				.avatar {
+					display: flex;
+					border-radius: 50px;
+
+					img {
+						border-radius: 50px;
+						margin: auto;
+					}
+				}
+			}
+
+			&_title {
+				white-space: nowrap;
+				min-width: 91px;
+
+				.name {
+					font-size: 12px;
+					color: #344767;
+					font-weight: 500;
+					display: flex;
+					align-items: center;
+					width: 100%;
+					text-transform: uppercase;
+
+					> span {
+						margin-right: 15px;
+						text-overflow: ellipsis;
+						overflow: hidden;
+					}
+
+					div {
+						border-radius: 16px;
+
+						.name_label {
+							font-size: 12px;
+							color: #fff;
+							font-weight: 400;
+							text-transform: none;
+							padding: 1px 8px;
+							margin: 0;
+						}
+					}
+				}
+			}
+
+			.department {
+				display: flex;
+				align-items: center;
+				margin-top: 7px;
+
+				.divider {
+					padding: 0 5px 0 5px;
+				}
+
+				.info {
+					text-overflow: ellipsis;
+					overflow: hidden;
+				}
+
+				.timeContainer {
+					margin-left: 10px;
+					display: flex;
+					align-items: center;
+				}
+			}
+		}
+
+		&_action {
+			display: flex;
+
+			.quantityContainer {
+				height: 30px;
+				border: 1px solid #dee2e6;
+				border-radius: 8px;
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 0 12px 0 12px;
+
+				span {
+					font-weight: 600;
+					font-size: 16px;
+					line-height: 150%;
+				}
+
+				.space {
+					margin: 0 4px 0 4px;
+				}
+			}
+		}
+
+		.ant-popconfirm-message-icon {
+			color: $error;
+		}
+	}
+}

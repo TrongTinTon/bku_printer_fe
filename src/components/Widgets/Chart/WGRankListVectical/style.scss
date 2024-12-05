@@ -1,0 +1,166 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.list-v-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    margin-top: 5px;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 5px;
+
+    & .list-v-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 5px 0px;
+
+        .left-group {
+            display: flex;
+            align-items: center;
+            width: 55%;
+            gap: 10px;
+
+            .num-row {
+                color: #64748B;
+                line-height: 1;
+                background: #EBEFF5;
+                height: 25px;
+                width: 25px;
+                min-width: 25px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50px;
+            }
+
+            .num-row-1 {
+                background: #EAB816 !important;
+                color: #fff !important;
+            }
+
+            .num-row-2 {
+                background: #8D9CB6 !important;
+                color: #fff !important;
+            }
+
+            .num-row-3 {
+                background: #C58B71 !important;
+                color: #fff !important;
+            }
+
+            .image {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 38px;
+                    height: 38px;
+                    border-radius: 50px;
+                    object-fit: cover;
+                }
+            }
+
+            .item-title-group {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                width: 85%;
+
+                .item-title {
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    gap: 10px;
+
+                    .title {
+                        text-transform: uppercase;
+                        color: #344767;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        cursor: default;
+                    }
+
+                    .bage {
+                        line-height: 1.5;
+                        font-size: 12px;
+                        padding: 1px 8px;
+                        background: linear-gradient(180deg, #9CACCC, #7487A6);
+                        color: white;
+                        border-radius: 20px;
+                    }
+
+                    .info {
+                        background: $info-gradient;
+                    }
+
+                    .success {
+                        background: $success-gradient;
+                    }
+
+                    .error {
+                        background: $error-gradient;
+                    }
+
+                    .danger {
+                        background: $danger-gradient;
+                    }
+                }
+
+                .item-sub-title {
+                    line-height: 1;
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+
+                    .sub-title {
+                        color: #A0AEC0;
+                        line-height: 1;
+                        font-size: 12px;
+                    }
+
+
+
+                }
+            }
+        }
+
+        .right-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            .value {
+                color: #A0AEC0;
+            }
+
+            .bage-value {
+                padding: 2px 8px;
+                border-radius: 30px;
+                background: #F3F5F9;
+                color: #A0AEC0;
+                cursor: default;
+            }
+        }
+
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d6dee175;
+        border-radius: 10px;
+        border: 3.5px solid transparent;
+        background-clip: content-box;
+        transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+}

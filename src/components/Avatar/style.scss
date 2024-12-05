@@ -1,0 +1,52 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.avatar-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 5px;
+
+    & .avatar-item {
+        display: flex;
+        align-items: center;
+
+        & .avatar-item-label {
+            color: #344767;
+        }
+    }
+
+    & .avatar-item:has(.avatar-item-label) {
+        gap: 8px;
+    }
+
+    & img {
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: -10px;
+        border: 2px solid #fff;
+    }
+
+    & span {
+        color: $info;
+    }
+
+    & .more-avatar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20px;
+        background: #ecf5ff;
+        border: 1px solid #fff;
+        color: #2275ff;
+        font-size: 14px;
+        margin-left: -10px;
+        padding: 0px 8px;
+        cursor: pointer;
+
+        &:hover {
+            background: #E7F1FF;
+        }
+    }
+
+}

@@ -1,0 +1,427 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.tabinfo-app-container {
+    display: flex;
+    width: 100%;
+    padding: 0 10px 0 20px;
+    height: 100%;
+    gap: 20px;
+
+    & .collapse-content {
+        width: 87%;
+
+        & .collapse-custom {
+            background: transparent;
+        }
+
+        & .collapse-custom-item {
+            background: #fff;
+            margin-bottom: 1rem;
+            border-radius: 1rem;
+            border: none;
+            padding: 0;
+            box-shadow: 0px 3.5px 5.5px 0px rgba(200, 200, 200, 0.02);
+
+            & .ant-collapse-header {
+                padding: 1rem;
+                border-bottom: 0px solid #e3e9f000;
+
+                & .ant-collapse-header-text {
+                    font-size: 16px;
+                    font-weight: 450;
+                    color: #344767;
+
+                    & .active {
+                        color: $info;
+                    }
+                }
+
+                &:has(.active) {
+                    & .arrow-collapse {
+                        color: $info !important;
+                    }
+                }
+            }
+
+            & .ant-collapse-header:has(.arrow-active) {
+                border-bottom: 1px solid #e3e9f0c5 !important;
+            }
+
+            & .arrow-collapse {
+                font-size: 16px;
+                color: #344767;
+                transition: all 0.2s ease-in-out;
+                transform: rotate(-90deg);
+
+                &.arrow-active {
+                    transform: rotate(0deg);
+                }
+            }
+
+            & .ant-collapse-content {
+                & .ant-collapse-content-box {
+                    padding: 20px;
+                }
+            }
+
+            & .block-container {
+                & .block-row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    width: 100%;
+
+                    & .group-field {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-end;
+                        gap: 10px;
+                        width: calc(50% - 10px);
+                        padding: 0px 10px;
+                        transition: all 0.2s ease-in-out;
+
+                        &.disabled {
+                            & .group-item-value {
+                                &:hover {
+                                    cursor: default;
+                                }
+
+                                & .item-value {
+                                    background: #ebeff56f;
+                                    border-color: #e3e9f0 !important;
+                                }
+                            }
+                        }
+
+                        & .item-label {
+                            width: calc(30% - 5px);
+                            height: 40px;
+                            font-weight: 400;
+                            color: #919bac;
+                            display: flex;
+                            align-items: center;
+                            justify-content: flex-end;
+                            text-align: right;
+
+                            & .icon-required {
+                                color: $error;
+                                padding-right: 5px;
+                            }
+                        }
+
+                        &:has(.ajax-form) {
+                            & .item-label {
+                                color: $info;
+                            }
+                        }
+
+                        &:has(.field-image-container) {
+                            width: 100%;
+
+                            & .item-label {
+                                width: 14%;
+                            }
+
+                            & .group-item-value {
+                                width: 86%;
+                            }
+                        }
+
+                        & .group-item-value {
+                            display: flex;
+                            align-items: center;
+                            gap: 12px;
+                            width: calc(70% - 5px);
+                            position: relative;
+
+                            & .ajax-form {
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                gap: 10px;
+
+                                & .ant-form-item {
+                                    margin-bottom: 0px;
+                                }
+
+                                & .field-edit-value {
+                                    width: calc(100% - 100px);
+                                    border-radius: 10px;
+
+                                    &:has(.ajax-textarea) {
+                                        width: 100%;
+                                    }
+
+                                    & .field-edit-input,
+                                    & .field-ajax-picklist,
+                                    & .field-ajax-multipicklist,
+                                    & .field-ajax-owner,
+                                    & .field-ajax-reference .ant-select,
+                                    & .field-ajax-multireference .value .ant-select {
+                                        box-shadow: rgba(129, 216, 249, 0.5) 0rem 0rem 0rem 0.125rem;
+                                    }
+
+                                    &:has(.ant-form-item-explain) {
+
+                                        & .field-edit-input,
+                                        & .field-ajax-picklist,
+                                        & .field-ajax-multipicklist,
+                                        & .field-ajax-owner,
+                                        & .field-ajax-reference .ant-select,
+                                        & .field-ajax-multireference .value .ant-select {
+                                            box-shadow: rgba(249, 129, 155, 0.326) 0rem 0rem 0rem 0.125rem;
+                                        }
+                                    }
+                                }
+
+                                & .group-btn-ajax {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    gap: 10px;
+                                    width: 90px;
+
+                                    & .ant-btn {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: center;
+                                        height: 40px;
+                                        width: 40px;
+                                        border-radius: 10px;
+                                        border: none;
+                                        font-size: 16px;
+                                        user-select: none;
+
+                                        &:hover {
+                                            opacity: 0.7;
+                                        }
+                                    }
+
+                                    & .btn-cancel {
+                                        color: #64748B;
+                                        background-color: #EBEFF5;
+                                    }
+
+                                    & .btn-save {
+                                        color: #33BA35;
+                                        background-color: #82E12F66;
+                                    }
+                                }
+
+                                & .ant-form-item-explain {
+                                    position: absolute;
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: flex-end;
+                                    bottom: 9.5px;
+                                    width: fit-content;
+                                    height: max-content;
+                                    right: 12px;
+                                    z-index: 10;
+                                    display: none;
+
+                                    & .ant-form-item-explain-error {
+                                        padding: 0;
+                                    }
+                                }
+
+                                &:has(.ajax-textarea) {
+                                    align-items: flex-end;
+                                    flex-direction: column;
+                                }
+                            }
+
+                            & .item-value {
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-between;
+                                padding: 8px 12px;
+                                width: 100%;
+                                border: 1px solid #e3e9f0;
+                                min-height: 40px;
+                                border-radius: 10px;
+                                color: #283751;
+                                font-weight: 400;
+                                white-space: pre-wrap;
+                                line-height: 1.5 !important;
+                                gap: 10px;
+
+                                &.no-border {
+                                    border: none;
+                                }
+
+                                &.no-background {
+                                    background: transparent;
+                                }
+
+                                &.no-padding {
+                                    padding: 0px;
+                                }
+
+                                &.disabled {
+                                    background: rgba(235, 239, 245, 0.4352941176);
+                                    cursor: default;
+                                }
+
+                                &:has(.field-picklist-container) {
+                                    padding: 7px 12px;
+                                }
+
+                                &:has(.field-multiowner-container) {
+                                    padding: 4px 12px;
+                                }
+
+                                & .icon-value {
+                                    color: #A0AEC0;
+
+                                    &.owner {
+                                        color: #F87738;
+                                    }
+                                }
+
+                                &:has(.icon-value.owner) {
+                                    & .field-owner-container {
+                                        & .owner-name {
+                                            color: $info;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                & .item-value {
+                                    border-color: rgb(53, 176, 245);
+                                }
+
+                                cursor: url("../assets/icon/PenCursor.svg"),
+                                auto;
+                            }
+                        }
+
+                        & .item-value-skeleton {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            padding: 0px 12px;
+                            width: 70%;
+                            min-height: 40px;
+                        }
+                    }
+
+                    &:has(.field-image-container) {
+                        gap: 0px;
+                    }
+                }
+            }
+        }
+
+        & .ajax-lineitem-form {
+            & .block-total-container {
+                & .field-edit-group {
+
+                    & .field-edit-input {
+                        box-shadow: rgba(129, 216, 249, 0.5) 0rem 0rem 0rem 0.125rem;
+                    }
+
+                    &:has(.ant-form-item-explain) {
+
+                        & .field-edit-input {
+                            box-shadow: rgba(249, 129, 155, 0.326) 0rem 0rem 0rem 0.125rem;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        &:has(.ajax-form, .field-lineitem-edit, .field-edit-group, .popconfirm-edit-discount, .popconfirm-edit-tax) {
+            & .group-item-value {
+                &:hover {
+                    & .item-value {
+                        border-color: #e3e9f0 !important;
+                    }
+
+                    cursor: default !important;
+                }
+            }
+
+            & .field-lineitem-detail {
+                &:hover {
+                    border-color: #e3e9f0 !important;
+                    cursor: default !important;
+                }
+            }
+
+            & .btn-add-product,
+            & .btn-add-service {
+                background-color: #f7f8fa;
+                border-color: #f7f8fa !important;
+
+                &:hover {
+                    cursor: not-allowed !important;
+                    opacity: 1 !important;
+                    transform: scale(1) !important;
+                    background-color: rgba(235, 239, 245, 0.4352941176) !important;
+                }
+            }
+
+            & .block-total-container {
+
+                & .btn-link,
+                & .text-date,
+                & .text-value {
+                    border-color: #e3e9f0;
+
+                    &:hover {
+                        cursor: default !important;
+                        opacity: 1 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    & .anchor-content {
+        width: 13%;
+
+        & .anchor-custom {
+            & .ant-anchor-link {
+                padding: 10px 20px 10px 15px;
+                transition: all 0.2s ease-in-out;
+                border-radius: 10px;
+                margin-left: 5px;
+                border-left: 3px solid transparent;
+
+                & .ant-anchor-link-title {
+                    color: #344767
+                }
+            }
+
+            & .ant-anchor-link-active {
+                background-color: #E7F1FF;
+                border-left: 3px solid $info;
+                transform: scale(1.025);
+
+                & .ant-anchor-link-title {
+                    color: $info
+                }
+            }
+
+            & .ant-anchor {
+                &::before {
+                    display: none;
+                }
+            }
+
+            & .ant-anchor-ink {
+                display: none !important;
+            }
+        }
+
+    }
+
+    & .content-not-permission {
+        width: 100%;
+    }
+}

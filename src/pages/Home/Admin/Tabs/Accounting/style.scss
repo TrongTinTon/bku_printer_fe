@@ -1,0 +1,73 @@
+.accountingReport-container {
+    .grid-invoiceRevenue {
+        grid-area: invoiceRevenue;
+    }
+
+    .grid-sales {
+        grid-area: sales;
+    }
+
+    .grid-grossProfit {
+        grid-area: grossProfit;
+    }
+
+
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    grid-template-areas: "sales grossProfit invoiceRevenue";
+
+    .group-tab-bage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px 0px;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    #root {
+        .accountingReport-container {
+            grid-template-columns: repeat(2, minmax(300px, 50%));
+            grid-template-areas:
+                "sales grossProfit"
+                "invoiceRevenue test"
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .accountingReport-container {
+                grid-template-columns: repeat(3, minmax(300px, 100%));
+                grid-template-areas: "sales grossProfit invoiceRevenue "
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #root {
+        .accountingReport-container {
+            grid-template-columns: repeat(1, minmax(200px, 100%));
+            grid-template-areas:
+                "sales"
+                "grossProfit"
+                "invoiceRevenue"
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .accountingReport-container {
+                grid-template-columns: repeat(2, minmax(300px, 50%));
+                grid-template-areas:
+                    "sales grossProfit"
+                    "invoiceRevenue test"
+            }
+        }
+    }
+}

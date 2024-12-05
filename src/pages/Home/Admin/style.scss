@@ -1,0 +1,11 @@
+@import "../../../global/GlobalStyle/ColorStyle.scss";
+
+.admin-container {
+	h1 {
+		background: $info-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+		text-align: center;
+	}
+}

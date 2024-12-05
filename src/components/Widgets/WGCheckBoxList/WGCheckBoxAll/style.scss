@@ -1,0 +1,71 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.itemSelect {
+	background: rgba(231, 243, 255, 0.8);
+}
+
+.labelCheckBoxAll {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border-top: 1px solid #e6e6e6;
+	border-bottom: 1px solid #e6e6e6;
+
+	input {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.checkmark {
+		width: 25px;
+		height: 25px;
+		border: 2px solid #eee;
+		border-radius: 6px;
+		margin: 10px;
+		display: flex;
+
+		svg {
+			height: 10px;
+			margin: auto;
+			visibility: hidden;
+		}
+	}
+
+	input:checked ~ .checkmark {
+		background: #344767;
+	}
+
+	input:checked ~ .checkmark svg {
+		color: $white;
+		visibility: visible;
+	}
+
+	&_checkBoxItemContainer {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 10px;
+		width: 100%;
+		min-width: 215px;
+
+		.checkboxIcon {
+			position: absolute;
+			opacity: 0;
+			cursor: pointer;
+			height: 25px;
+			width: 25px;
+		}
+
+		&_review {
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: uppercase;
+			color: #8392ab;
+			width: 292px;
+			text-align: end;
+		}
+	}
+}

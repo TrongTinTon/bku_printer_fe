@@ -1,0 +1,218 @@
+.sidernav {
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+    height: calc(100vh - 2rem);
+    z-index: 1000;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: sticky !important;
+    top: 1rem;
+    left: 0;
+
+    &_logo {
+        padding: 1.5rem 1.4rem 1rem;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 250px;
+        transition: margin 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        position: sticky;
+        top: 0px;
+        background: white;
+        z-index: 100;
+
+        &_img {
+            width: 2.5rem;
+        }
+
+        &_name {
+            color: rgb(52, 71, 103);
+            font-weight: 600;
+            font-size: 16px;
+            padding: 0px 10px;
+            opacity: 1;
+            min-width: 140px;
+            transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+        }
+    }
+
+    &_menu {
+        border-inline-end: 0px solid rgba(5, 5, 5, 0.06) !important;
+    }
+
+    & .sidernav_menu {
+        font-size: 16px;
+    }
+
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    & .divider {
+        margin: 0rem 0px 1rem 0px;
+        position: sticky;
+        top: 80px;
+    }
+
+    & .sidernav_logo_img:hover {
+        cursor: pointer;
+    }
+}
+
+.ant-layout-sider-collapsed {
+    & .sidernav_logo_name {
+        opacity: 0;
+    }
+
+    & .sidernav_logo {
+        margin-left: -7px;
+    }
+
+    & .ant-menu-item-group-title {
+        padding: 8px 10px !important;
+        text-align: center;
+    }
+
+    & .ant-menu-submenu-selected {
+        & .ant-menu-item-icon {
+            background-color: rgb(23, 193, 232) !important;
+            color: white !important;
+        }
+    }
+}
+
+.sidernav .ant-menu-item,
+.ant-menu-submenu-title {
+    margin-bottom: 12px !important;
+    width: auto !important;
+    padding-left: 15px !important;
+    padding: 5px 25px !important;
+    height: auto !important;
+
+    &:hover {
+        background-color: #F3F5F9 !important;
+    }
+
+    & .ant-menu-submenu-arrow {
+        color: rgb(154, 171, 206);
+        ;
+    }
+}
+
+.sidernav li .ant-menu-item-icon {
+    background-color: rgb(233, 236, 239);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-shadow: 0rem 0.25rem 0.375rem -0.0625rem rgba(20, 20, 20, 0.12), 0rem 0.125rem 0.25rem -0.0625rem rgba(20, 20, 20, 0.07);
+    transition: margin 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 10px;
+    font-size: 16px !important;
+    color: rgba(0, 0, 0, 0.54) !important
+}
+
+.sidernav li .ant-menu-title-content {
+    margin-inline-start: 15px !important;
+    font-size: 14px;
+    color: rgb(103, 116, 142);
+}
+
+.sidernav li .ant-menu-item-group-title {
+    padding: 8px 30px;
+    color: rgb(52, 71, 103);
+    text-transform: uppercase;
+    vertical-align: unset;
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.sidernav .ant-menu-item-selected,
+.sidernav .ant-menu-submenu-open {
+    background-color: white;
+
+    & .ant-menu-item-icon {
+        background-color: rgb(23, 193, 232) !important;
+        color: white !important;
+    }
+
+    & .ant-menu-title-content {
+        color: rgb(52, 71, 103);
+        font-weight: 500;
+    }
+
+    & .ant-menu-submenu-arrow {
+        color: rgb(23, 193, 232);
+    }
+
+}
+
+.sidernav .ant-menu-submenu .ant-menu-sub {
+    background-color: white !important;
+
+    & .ant-menu-item {
+        margin: 0;
+        padding: 10px 16px !important;
+        background-color: white;
+        margin-bottom: 5px !important;
+        margin-inline: 20px;
+
+    }
+
+    & .ant-menu-title-content {
+        font-weight: normal;
+        color: rgb(103, 116, 142);
+    }
+
+    & .ant-menu-item-icon {
+        background-color: rgba(233, 236, 239, 0) !important;
+        color: rgba(0, 0, 0, 0.54) !important;
+        padding: 0px;
+        box-shadow: none;
+        border-radius: 0px;
+    }
+
+    & .ant-menu-item-selected {
+        background-color: #E7F3FF;
+
+        & .ant-menu-title-content {
+            color: #1677ff !important;
+            font-weight: 500;
+        }
+
+        & .ant-menu-item-icon {
+            background: rgba(255, 255, 255, 0);
+            box-shadow: none;
+        }
+    }
+}
+
+.ant-menu-submenu-popup .ant-menu-vertical {
+    border-radius: 10px !important;
+    padding: 10px !important;
+    color: rgba(0, 0, 0, 0.54) !important;
+
+    & li:hover {
+        color: rgba(0, 0, 0, 0.54) !important;
+        background-color: #F3F5F9 !important;
+    }
+
+    & .ant-menu-item {
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        height: auto;
+        padding-block: 10px;
+        margin-block: 10px;
+    }
+
+    & .ant-menu-item-selected {
+        font-weight: 600;
+
+        &:hover {
+            color: #1677ff !important;
+        }
+    }
+}

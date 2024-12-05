@@ -1,0 +1,17 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.detail-modal-project {
+    & .modal-container {
+        & .modal-body {
+            & .detail-tab-panel {
+                z-index: 10;
+                height: 65px;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                margin-bottom: 1rem !important;
+                box-shadow: none;
+                background: white;
+            }
+        }
+    }
+}

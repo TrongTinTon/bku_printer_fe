@@ -1,0 +1,114 @@
+.todo-container {
+	.grid-quotes {
+		grid-area: quotes;
+	}
+
+	.grid-salesOrder {
+		grid-area: salesOrder;
+	}
+
+	.grid-purchaseOrder {
+		grid-area: purchaseOrder;
+	}
+
+	.grid-payOrder {
+		grid-area: payOrder;
+	}
+
+	.grid-absence {
+		grid-area: absence;
+	}
+
+	.grid-event {
+		grid-area: event;
+	}
+
+	.grid-post {
+		grid-area: post;
+	}
+
+	.grid-productOrder {
+		grid-area: productOrder;
+	}
+
+	.crm-row {
+		display: grid;
+		grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+		gap: 16px 16px;
+		grid-template-areas:
+			"quotes salesOrder purchaseOrder"
+			"payOrder absence event"
+			"payOrder productOrder event"
+			"post productOrder event";
+
+		& .crm-col {
+			overflow: hidden;
+		}
+
+		& .grid-payOrder {
+			border-radius: 16px;
+		}
+	}
+}
+
+@media screen and (max-width: 1650px) {
+	#root {
+		.crm-row {
+			grid-template-columns: repeat(2, minmax(300px, 50%));
+			grid-template-areas:
+				"quotes salesOrder"
+				"purchaseOrder absence"
+				"payOrder event"
+				"productOrder event"
+				"productOrder post";
+		}
+	}
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+	#root {
+		:has(.ant-layout-sider-collapsed) {
+			.crm-row {
+				grid-template-columns: repeat(3, minmax(300px, 100%));
+				grid-template-areas:
+					"quotes salesOrder purchaseOrder"
+					"payOrder absence event"
+					"payOrder productOrder event"
+					"post productOrder event";
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	#root {
+		.crm-row {
+			grid-template-columns: repeat(1, minmax(200px, 100%));
+			grid-template-areas:
+				"quotes"
+				"salesOrder"
+				"purchaseOrder"
+				"absence"
+				"payOrder"
+				"productOrder"
+				"event"
+				"post";
+		}
+	}
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+	#root {
+		:has(.ant-layout-sider-collapsed) {
+			.crm-row {
+				grid-template-columns: repeat(2, minmax(300px, 50%));
+				grid-template-areas:
+					"quotes salesOrder"
+					"purchaseOrder absence"
+					"payOrder event"
+					"productOrder event"
+					"productOrder post";
+			}
+		}
+	}
+}

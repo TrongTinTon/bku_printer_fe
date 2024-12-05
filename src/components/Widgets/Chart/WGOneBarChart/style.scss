@@ -1,0 +1,33 @@
+.out-group,
+.in-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    .value {
+        font-weight: 600;
+        color: #F63A46;
+        line-height: 1;
+    }
+
+    .label {
+        color: #A0AEC0;
+        line-height: 1;
+    }
+}
+
+.in-group {
+    align-items: flex-end;
+
+    .value {
+        color: #64748B;
+    }
+}
+
+.note {
+    color: #A0AEC0;
+    font-size: 12px;
+    line-height: 100%;
+    position: absolute;
+    bottom: 20px;
+}

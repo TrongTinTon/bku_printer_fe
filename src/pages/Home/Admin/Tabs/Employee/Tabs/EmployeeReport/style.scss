@@ -1,0 +1,86 @@
+.employeeReport-container {
+    .grid-status {
+        grid-area: status;
+    }
+
+    .grid-employeeChange {
+        grid-area: employeeChange;
+    }
+
+    .grid-deparment {
+        grid-area: deparment;
+    }
+
+    .grid-tagBage1 {
+        grid-area: tagBage1;
+    }
+
+    .grid-tagBage2 {
+        grid-area: tagBage2;
+    }
+
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    grid-template-areas: "status employeeChange deparment"
+    "tagBage1 tagBage2 deparment";
+
+    .group-tab-bage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px 0px;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    #root {
+        .employeeReport-container {
+            grid-template-columns: repeat(2, minmax(300px, 50%));
+            grid-template-areas:
+                "status employeeChange"
+                "tagBage1 deparment"
+                "tagBage2 deparment"
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .employeeReport-container {
+                grid-template-columns: repeat(3, minmax(300px, 100%));
+                grid-template-areas: "status employeeChange deparment"
+                    "tagBage1 tagBage2 deparment";
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #root {
+        .employeeReport-container {
+            grid-template-columns: repeat(1, minmax(200px, 100%));
+            grid-template-areas:
+                "status"
+                "employeeChange"
+                "deparment"
+                "tagBage1"
+                "tagBage2"
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .employeeReport-container {
+                grid-template-columns: repeat(2, minmax(300px, 50%));
+                grid-template-areas:
+                    "status employeeChange"
+                    "tagBage1 deparment"
+                    "tagBage2 deparment"
+            }
+        }
+    }
+}

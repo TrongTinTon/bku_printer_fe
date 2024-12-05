@@ -1,0 +1,129 @@
+.rose-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    flex-direction: row;
+
+    .rose-diff-container {
+        width: 150px;
+        height: 1px;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 10px;
+        z-index: 1;
+
+        .total-label {
+            font-size: 12px;
+            color: #A0AEC0;
+            line-height: 1.1;
+            font-weight: 300;
+            padding-bottom: 3px;
+        }
+
+        .total-value {
+            font-size: 25px;
+            color: #A0AEC0;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .rose-diff {
+            font-size: 12px;
+            color: #33BA35;
+            line-height: 1;
+            z-index: 1;
+            cursor: default;
+            padding-top: 3px;
+        }
+    }
+
+    .error {
+        color: #F63A46 !important;
+    }
+
+
+    .rose-legend {
+        width: 100%;
+
+        .legend-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #EBEFF5;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .group-name {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .marker {
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 20px;
+                }
+
+                .name {
+                    color: #252F40;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+
+            .group-value {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .value {
+                    color: #64748B;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+
+                .diff {
+                    color: #33BA35;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+
+
+            &:hover {
+                opacity: 0.75;
+                cursor: pointer;
+            }
+        }
+
+        .hide {
+
+            & .name,
+            .value {
+                color: #d8d8d8 !important;
+            }
+
+            & .marker {
+                background: #d8d8d8 !important;
+            }
+        }
+    }
+}
+
+.rose-legend-left {
+    flex-direction: row-reverse !important;
+}
+
+.rose-legend-bottom {
+    flex-direction: column !important;
+}
+
+.rose-legend-top {
+    flex-direction: column-reverse !important;
+}

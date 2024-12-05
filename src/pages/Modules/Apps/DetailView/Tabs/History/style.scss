@@ -1,0 +1,250 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.timeline-history-container {
+    padding: 0 10px 0 20px;
+    margin-bottom: 10px;
+    box-shadow: 0px 3.5px 5.5px 0px rgba(200, 200, 200, 0.02);
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: transparent;
+        border-bottom-right-radius: 16px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(214, 222, 225, 1);
+        border-radius: 20px;
+        background-clip: content-box;
+        transition: transform .2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #ccd5d8;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    & .timeline-history {
+        background: $white;
+        border-radius: 15px;
+        padding-left: 180px;
+        padding-top: 28px;
+
+        & .timeline-history-item {
+            & .ant-timeline-item-head {
+                inset-block-start: 25px !important;
+
+                & .update_icon {
+                    & img {
+                        width: 42px;
+                        height: 42px;
+                    }
+
+                    & .update_image_user {
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    & .update_image_module {
+                        border-radius: 0;
+                    }
+                }
+            }
+
+            & .ant-timeline-item-content {
+                margin-inline-start: 50px !important;
+
+                & .timeline-item_container {
+                    padding: 15px;
+                    border-radius: 8px;
+                    max-width: 600px;
+
+                    & .header-timeline-item {
+                        font-weight: 500;
+
+                        & .title-item {
+                            font-size: 14px;
+
+                            & .owner-title {
+                                color: $info;
+                            }
+                        }
+
+                        & .modifiedtime {
+                            font-size: 12px;
+                            padding-top: 5px;
+                            color: $disable;
+                            display: flex;
+                            align-items: center;
+                            gap: 5px;
+
+                            & .time-text,
+                            & .time-full {
+                                &::first-letter {
+                                    text-transform: uppercase;
+                                }
+                            }
+
+                        }
+                    }
+
+                    & .body-timeline-item {
+                        padding: 10px 20px 0 20px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+
+                        & .container {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 10px;
+
+                            & .update-name {
+                                margin-bottom: 2px;
+
+                                & .field-name {
+                                    background-image: $danger-gradient;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                }
+                            }
+
+                            & .update-from {
+                                display: flex;
+                                gap: 10px;
+                                text-decoration: line-through;
+
+                                & .picklist,
+                                & .multipicklist {
+                                    text-decoration-color: #fff !important;
+                                    text-decoration: line-through;
+                                }
+
+                                & .owner-img {
+                                    opacity: 0.8;
+                                }
+
+                                .field-name {
+                                    color: $error;
+                                    width: 15px;
+                                }
+                            }
+
+                            & .owner {
+                                display: flex;
+                                flex-direction: column;
+                                gap: 10px;
+                                align-items: center;
+                                font-size: 12px;
+
+                                & img {
+                                    width: 32px;
+                                    height: 30px;
+                                    border-radius: 50%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            & .update-to {
+                                display: flex;
+                                gap: 10px;
+
+                                .field-name {
+                                    color: $success;
+                                    width: 15px;
+                                }
+                            }
+
+                            & .cell-bage-value {
+                                display: flex;
+                                align-items: center;
+                                color: $white;
+                                border-radius: 6px;
+                                padding: 0 10px;
+                                font-size: 13px;
+                                font-weight: 500;
+                                height: 22px;
+                                width: fit-content;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        & .history-skeleton-item {
+            padding-bottom: 20px;
+            display: flex;
+
+            & .ant-skeleton-avatar {
+                width: 42px;
+                height: 42px;
+                margin-left: -20px;
+            }
+
+            & .ske-item-content {
+                margin-left: 43px;
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                position: relative;
+
+                & .ant-skeleton-input {
+                    border-radius: 8px;
+                }
+
+                & .ske-item-value {
+                    margin-left: 25px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+        }
+
+    }
+
+    & .list-empty {
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 600px;
+        box-shadow: 0px 3.5px 5.5px $black-secondary;
+        margin-left: 180px;
+        margin-top: 20px;
+    }
+}
+
+.timeline-history-footer {
+    background: $white;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    & .load-more {
+        margin-left: 32em;
+        margin-bottom: 35px;
+        border: none;
+        color: #344767;
+        background: #F3F5F9;
+        border-radius: 10px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+
+        & span {
+            line-height: 1;
+        }
+
+        &:hover {
+            transform: scale(1.05);
+        }
+
+        &:active {
+            transform: scale(1);
+        }
+
+    }
+}

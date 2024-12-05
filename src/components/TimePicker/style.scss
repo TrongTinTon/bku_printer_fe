@@ -1,0 +1,60 @@
+.time-picker-custom {
+    & .ant-picker-input {
+        & input {
+            color: #344767;
+        }
+    }
+}
+
+
+.ant-picker-dropdown {
+    & .ant-picker-time-panel-column {
+        & .ant-picker-time-panel-cell-inner {
+            color: #344767 !important;
+
+            &:hover {
+                border-radius: 8px !important;
+            }
+        }
+
+        & .ant-picker-time-panel-cell-selected {
+            & .ant-picker-time-panel-cell-inner {
+                border-radius: 8px !important;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: #fff;
+            border-top-right-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(214, 222, 225, 0.53);
+            border-radius: 20px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+            transition: transform .2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms
+        }
+    }
+
+    & .ant-picker-footer {
+        & .ant-picker-ranges {
+            align-items: center;
+
+            & .ant-picker-ok {
+                & button {
+                    height: 30px;
+                    padding: 0 10px;
+
+                    &:hover {
+                        background-color: #4096ff;
+                    }
+                }
+
+
+            }
+        }
+    }
+}

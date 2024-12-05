@@ -1,0 +1,17 @@
+.Demo-container {
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    // grid-template-areas: "";
+
+    .group-tab-bage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px 0px;
+
+        .chart-bage {
+            width: 48.7%;
+        }
+    }
+}

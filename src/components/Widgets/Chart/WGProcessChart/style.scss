@@ -1,0 +1,65 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.list-process-container {
+    display: flex;
+    align-items: flex-start;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    margin-top: 5px;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 9px;
+
+    .list-item {
+        width: 100%;
+
+        .label-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .label {
+                color: #344767;
+                font-weight: 600;
+            }
+
+            .value-group {
+                display: flex;
+                align-items: center;
+                gap: 7px;
+                cursor: default;
+
+                .percent {
+                    color: #64748B;
+                }
+
+                .diff {
+                    color: #33BA35;
+                }
+
+                .error {
+                    color: #F63A46;
+                }
+            }
+        }
+
+        .ant-progress {
+            margin: 0px;
+        }
+    }
+
+
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #ffffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #d6dee175;
+        border-radius: 10px;
+        border: 3.5px solid transparent;
+        background-clip: content-box;
+        transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+}

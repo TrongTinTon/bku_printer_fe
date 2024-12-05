@@ -1,0 +1,6 @@
+{
+    "require": {
+        "setasign/fpdi": "^2.6",
+        "phpoffice/phpword": "^1.3"
+    }
+}

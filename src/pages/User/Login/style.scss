@@ -1,0 +1,131 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    background: $black-gradient;
+    padding: 50px;
+    max-width: 1024px;
+    height: 450px;
+    margin: 40px auto;
+    background-color: rgb(255, 255, 255);
+    background-clip: border-box;
+    border: 0px solid rgba(0, 0, 0, 0.125);
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.05) 0rem 1.25rem 1.6875rem 0rem;
+    
+    .tilte {
+        color:$info;
+        text-align: center;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        &_appInfo {
+            &_title {
+                margin: 0;
+                padding: 0;
+                font-size: 18px;
+                background: linear-gradient(270deg, #2152FF 0%, #21D4FD 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-weight: 700;
+            }
+            &_subTitle {
+                margin: 0;
+                padding: 0;
+                font-size: 16px;
+                background: linear-gradient(270deg, #2152FF 0%, #21D4FD 100%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        }
+    }
+    .wrap-btn {
+        margin: auto;
+        .login-btn {
+            background: $white;
+            width: 100%;
+            max-width: 128px;
+            display: inline-flex;
+            font-size: 14px;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: $info;
+        }
+
+        .login-btn:hover {
+            transition: all 0.15s ease;
+        }
+    }
+}
+
+.sso-page {
+    &_header {
+        background: #0388B4;
+        height: 60px;
+    }
+    &_body{
+        background: #E0E4E7;
+        display: flex;
+        .sso-login-form {
+            width: 500px;
+            height: 556px;
+            border-radius: 16px;
+            box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            background: $white;
+            margin: auto;
+            &_top {
+                display: flex;
+                img {
+                    margin: auto;
+                    width: 250px;
+                }
+            }
+            &_main {
+                display: flex;
+                flex-direction: column;
+                padding: 50px;
+                gap: 8px;
+                .label {
+                    color: $info;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                .sso-btn {
+                    color: #000;
+                    background: $white;
+                    width: 100%;
+                    max-width: 300px;
+                    display: inline-flex;
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    height: 47px;
+                    font-size: 14px;
+                }
+                .sso-btn:hover {
+                    color: #000 !important;
+                    transition: all 0.15s ease;
+                }
+            }
+        }
+    }
+    &_footer {
+        background: #495057;
+    }
+}

@@ -1,0 +1,112 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.CommentItemContainer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 10px 10px 10px;
+	min-width: 270px;
+	background: rgb(243 245 249);
+	border-radius: 14px;
+	height: 68px;
+
+	&_review {
+		display: flex;
+
+		height: 48px;
+		&_avatarContainer {
+			position: relative;
+			display: flex;
+			margin-right: 10px;
+
+			.avatar {
+				display: flex;
+				border-radius: 50px;
+				position: relative;
+				width: 23px;
+				height: 23px;
+
+				.avatarImage {
+					border-radius: 50px;
+					margin: auto;
+					width: 23px;
+				}
+
+				.avatarIcon {
+					position: absolute;
+					margin-top: 24px;
+					text-align: center;
+					left: 32px;
+					display: flex;
+
+					img {
+						width: 20.48px;
+						height: 20.48px;
+						padding: 3px;
+						border-radius: 50%;
+						background: #ffffff;
+						margin: auto;
+					}
+				}
+			}
+		}
+
+		&_title {
+			overflow: hidden;
+			max-width: 307px;
+			display: flex;
+			flex-direction: column;
+
+			.name {
+				font-size: 12px;
+				color: #344767;
+				font-weight: 500;
+				display: flex;
+				align-items: center;
+
+				.text {
+					margin: 0;
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+				}
+			}
+		}
+
+		.content {
+			color: #344767;
+			display: flex;
+			align-items: center;
+
+			span {
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+
+			.timeContainer {
+				margin-left: 10px;
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		.more {
+			cursor: pointer;
+			font-size: 10px;
+			color: #a0aec0;
+		}
+	}
+
+	&_count {
+		display: flex;
+
+		.total {
+			margin-left: 6px;
+		}
+	}
+
+	.ant-popconfirm-message-icon {
+		color: $error;
+	}
+}

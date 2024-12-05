@@ -1,0 +1,411 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.detail-modal-app {
+    width: 98vw !important;
+    height: calc(100vh - 2rem) !important;
+
+    & .ant-modal-content {
+        height: 100%;
+        border-radius: 1rem;
+        background: #F8F9FA;
+        padding: 0;
+
+        & .modal-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+            & .modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background: #fff;
+                border-top-right-radius: 1rem;
+                border-top-left-radius: 1rem;
+                height: 65px;
+
+                & .group-left {
+                    border: none !important;
+                }
+
+                & .title {
+                    max-width: max-content !important;
+                }
+            }
+
+            & .left-extra,
+            & .right-extra {
+                background: #fff;
+                border-top-right-radius: 1rem;
+                border-top-left-radius: 1rem;
+                padding: 10px 20px;
+                display: flex;
+                align-items: center;
+
+                & .group-left,
+                & .group-right {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                }
+
+                & .group-left {
+                    border-right: 1px solid #E2E8F0;
+                    padding-right: 20px;
+
+                    & .btn-close {
+                        display: flex;
+                        align-items: center;
+                        font-size: 24px;
+                        color: #A0AEC0;
+                        transition: transform 0.2s ease;
+                        user-select: none;
+
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.15);
+                            color: $info;
+                        }
+
+                        &:active {
+                            transform: translateY(1.5px);
+                        }
+                    }
+
+                    & .title {
+                        color: #344767;
+                        font-size: 20px;
+                        font-weight: 600;
+                        max-width: 300px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    & .btn-star {
+                        display: flex;
+                        align-items: center;
+                        color: #E2E8F0;
+                        font-size: 20px;
+                        transition: transform 0.2s ease;
+                        user-select: none;
+
+                        & .icon-star {
+                            display: block;
+                        }
+
+                        & img {
+                            display: none;
+                        }
+
+                        &.active {
+                            & img {
+                                display: block;
+                            }
+
+                            & .icon-star {
+                                display: none;
+                            }
+                        }
+
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.1);
+                            color: $danger;
+                        }
+
+                        &:active {
+                            transform: translateY(1.05px);
+                        }
+                    }
+                }
+
+                & .group-right {
+
+                    & .btn-edit,
+                    & .btn-setting,
+                    & .btn-more {
+                        font-size: 16px;
+                        width: 40px;
+                        height: 40px;
+                        background: #EBEFF5;
+                        color: #A0AEC0;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 10px;
+                        transition: all 0.2s ease;
+                        user-select: none;
+
+                        &:hover {
+                            cursor: pointer;
+                            background: #E2E8F0;
+                            color: #344767;
+                        }
+                    }
+
+                    & .btn-edit {
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+
+                        &:active {
+                            transform: scale(1);
+                        }
+                    }
+                }
+
+                &.right-extra {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    justify-content: flex-end;
+                }
+
+            }
+
+            & .modal-body {
+                & .tabs-container {
+                    height: calc(100vh - 7rem - 20px);
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+
+                    &::-webkit-scrollbar {
+                        width: 10px;
+                        background-color: transparent;
+                        border-bottom-right-radius: 16px;
+                    }
+
+                    &::-webkit-scrollbar-thumb {
+                        background-color: rgba(214, 222, 225, 1);
+                        border-radius: 20px;
+                        background-clip: content-box;
+                        transition: transform .2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms
+                    }
+
+                    &::-webkit-scrollbar-thumb:hover {
+                        background-color: #ccd5d8;
+                    }
+
+                    & .detail-tab-panel {
+                        z-index: 10;
+                        height: 65px;
+                        padding: 0 20px;
+
+                        &.in-header {
+                            border-top-left-radius: 1rem;
+                            border-top-right-radius: 1rem;
+                            padding: 0;
+                        }
+
+                        margin-bottom: 1rem !important;
+                        box-shadow: none;
+                        background: white;
+
+                        & .ant-tabs-nav {
+                            height: 100%;
+                            border-radius: 16px;
+
+                            & .ant-tabs-nav-operations {
+                                & .ant-tabs-nav-more {
+                                    color: #99A3B3;
+                                    margin-left: 0px !important;
+                                    padding: 5px 20px !important;
+                                    cursor: pointer;
+
+                                    &:hover {
+                                        color: $info;
+                                        background: #F8F9FA;
+                                    }
+                                }
+                            }
+
+                            &::before {
+                                border-bottom: none;
+                            }
+
+                            .ant-tabs-nav-wrap {
+
+                                &:active {
+                                    height: 100%;
+                                }
+
+                                &::before {
+                                    box-shadow: inset 13px 0 8px -8px rgba(126, 126, 126, 0.06);
+                                }
+
+                                &::after {
+                                    box-shadow: inset -13px 0 8px -8px rgba(126, 126, 126, 0.06);
+                                }
+
+                                & .ant-tabs-nav-list {
+                                    color: #99A3B3;
+
+                                    .ant-tabs-tab-btn {
+                                        font-weight: 500;
+                                        font-size: 14px;
+                                        line-height: 1;
+                                        color: #99A3B3;
+                                        text-shadow: none;
+                                        line-height: normal;
+                                    }
+
+                                    .ant-tabs-tab {
+                                        padding: 0 5px !important;
+
+                                        & .tab-label {
+                                            display: flex;
+                                            align-items: center;
+                                            gap: 10px;
+
+                                            & img {
+                                                width: 18px;
+                                                height: 18px;
+                                            }
+
+                                            & .module-icon {
+                                                display: block;
+                                            }
+
+                                            & .module-icon-active {
+                                                display: none;
+                                            }
+
+                                            & .bage-count {
+                                                border-radius: 16px;
+                                                background: $danger-gradient;
+                                                text-align: center;
+                                                padding: 3px 6px;
+                                                color: #FFF;
+                                                font-size: 12px;
+                                                font-weight: 500;
+                                                line-height: 100%;
+
+                                                &.hide {
+                                                    display: none;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    & .ant-tabs-tab-active {
+                                        & .module-icon {
+                                            display: none !important;
+                                        }
+
+                                        & .module-icon-active {
+                                            display: block !important;
+                                        }
+
+                                        & .bage-count {
+                                            background: $info-gradient !important;
+                                        }
+                                    }
+
+                                    .ant-tabs-tab-active .ant-tabs-tab-btn {
+                                        color: $info;
+                                        text-shadow: none;
+                                    }
+
+                                    .ant-tabs-ink-bar {
+                                        background-color: $info;
+                                        height: 4px;
+                                        border-top-left-radius: 3px;
+                                        border-top-right-radius: 3px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    & .tab-extra-content {
+                        position: absolute;
+                        right: 20px;
+                        top: -65px;
+                        z-index: 1000;
+                    }
+                }
+
+                & .tabs-container:has(.in-header) {
+                    overflow: hidden;
+                    height: 100%;
+
+                    & .ant-tabs-content {
+                        height: calc(100vh - 7rem - 20px);
+                        overflow-y: scroll;
+                        overflow-x: hidden;
+
+                        &::-webkit-scrollbar {
+                            width: 10px;
+                            background-color: transparent;
+                            border-bottom-right-radius: 16px;
+                        }
+
+                        &::-webkit-scrollbar-thumb {
+                            background-color: rgba(214, 222, 225, 1);
+                            border-radius: 20px;
+                            background-clip: content-box;
+                            transition: transform .2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms
+                        }
+
+                        &::-webkit-scrollbar-thumb:hover {
+                            background-color: #ccd5d8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.tab-more.tab-more-detail-app {
+    & .ant-tabs-dropdown-menu {
+        max-height: 400px;
+    }
+
+    & .ant-tabs-dropdown-menu-item {
+        padding: 10px;
+    }
+
+    & .tab-label {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #99A3B3;
+
+        & span {
+            font-weight: 500;
+            font-size: 14px;
+            color: #99A3B3;
+            text-shadow: none;
+        }
+
+        & img {
+            width: 18px;
+            height: 18px;
+        }
+
+        & .module-icon {
+            display: block;
+        }
+
+        & .module-icon-active {
+            display: none;
+        }
+
+        & .bage-count {
+            border-radius: 16px;
+            background: $danger-gradient;
+            text-align: center;
+            padding: 3px 6px;
+            color: #FFF;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 100%;
+
+            &.hide {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.inventoryReport-container {
+    .grid-status {
+        grid-area: status;
+    }
+
+    .grid-inStock {
+        grid-area: inStock;
+    }
+
+    .grid-outStock {
+        grid-area: outStock;
+    }
+
+
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    grid-template-areas: "status inStock outStock";
+
+    .group-tab-bage {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 16px 0px;
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    #root {
+        .inventoryReport-container {
+            grid-template-columns: repeat(2, minmax(300px, 50%));
+            grid-template-areas:
+                "status inStock "
+                "outStock test"
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .inventoryReport-container {
+                grid-template-columns: repeat(3, minmax(300px, 100%));
+                grid-template-areas: "status inStock outStock"
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #root {
+        .inventoryReport-container {
+            grid-template-columns: repeat(1, minmax(200px, 100%));
+            grid-template-areas:
+                "status"
+                "inStock"
+                "outStock"
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .inventoryReport-container {
+                grid-template-columns: repeat(2, minmax(300px, 50%));
+                grid-template-areas:
+                    "status inStock"
+                    "outStock test"
+            }
+        }
+    }
+}

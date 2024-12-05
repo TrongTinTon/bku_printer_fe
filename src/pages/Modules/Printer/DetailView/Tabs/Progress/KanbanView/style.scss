@@ -1,0 +1,317 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.detail-modal-project {
+    position: relative;
+
+    & .kanban-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 10px 0 20px;
+
+        & .kanban-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+
+            & .group-left,
+            & .group-right {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                & .btn-filter,
+                .btn-sort,
+                .btn-reload,
+                .btn-total {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: #fff;
+                    border-radius: 10px;
+                    padding: 0 12px;
+                    height: 40px;
+                    gap: 12px;
+                    font-size: 16px;
+                    color: #A0AEC0;
+                    transition: color .25s ease-in-out, background .25s ease-in-out, transform .06s ease;
+                    user-select: none;
+
+                    & span {
+                        font-size: 14px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                        background: #EBEFF5;
+                        color: #A0AEC0;
+                    }
+
+                    &.disabled {
+                        background: #EBEFF5;
+                        cursor: not-allowed;
+                    }
+                }
+
+                & .btn-total {
+                    &:hover {
+                        cursor: default;
+                        background: #fff;
+                        color: #A0AEC0;
+                    }
+                }
+
+                & .btn-reload:not(.disabled) {
+                    &:active {
+                        transform: scale(0.93);
+                    }
+                }
+
+                & .btn-sort,
+                & .btn-filter {
+                    position: relative;
+                    transition: background-color .25s ease-in-out;
+
+                    &:has(.sort-bage-active) {
+                        background-color: #A0AEC0 !important;
+                        color: #fff !important;
+                    }
+
+                    & .sort-bage-active {
+                        width: 7px;
+                        height: 7px;
+                        background: #F63A46;
+                        opacity: 0.7;
+                        border-radius: 20px;
+                        position: absolute;
+                        right: 4px;
+                        top: 4px;
+                    }
+                }
+            }
+
+            & .group-left {
+                width: 40%;
+                position: relative;
+
+                & .search {
+                    width: 55%;
+
+                    & .input-search {
+                        width: 100%;
+                        max-width: 400px;
+
+                        & .ant-input-affix-wrapper {
+                            border-color: #fff;
+                        }
+                    }
+                }
+            }
+
+            & .group-right {
+                width: 60%;
+                justify-content: flex-end;
+            }
+        }
+
+        & .kanban-body {
+            display: flex;
+            overflow-x: auto;
+            overflow-y: hidden;
+            height: calc(100vh - 12.3rem);
+            user-select: none;
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &:active {
+                cursor: grabbing;
+            }
+
+            & .list-columns {
+                display: flex;
+                gap: 20px;
+
+                & .draging-item {
+                    padding: 15px 1px 0 1px;
+
+                    & .drag-content {
+                        border-radius: 16px;
+                        height: 100%;
+                        background: #EBEFF5;
+                    }
+                }
+            }
+
+            & .btn-add-kanban-column {
+                width: 330px;
+                color: #A0AEC0;
+                background-color: #fff;
+                height: 50px;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                padding: 0 20px;
+                gap: 10px;
+
+                &.hide {
+                    display: none;
+                }
+
+                & span {
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    color: #344767;
+                    background-color: #EBEFF5;
+                }
+            }
+
+            & .form-add-kanban-column {
+                background-color: #fff;
+                padding: 10px;
+                width: 330px;
+                height: 60px;
+                border-radius: 14px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                &.hide {
+                    display: none;
+                }
+
+                & .input-name-column {
+                    font-size: 14px;
+                    height: 40px;
+                    border-radius: 10px;
+                }
+
+                & .btn-save-column {
+                    min-width: 40px;
+                    height: 40px;
+                    background: $info-gradient;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 10px;
+                    color: #fff;
+                    transition: transform .2s ease;
+
+                    &.disabled {
+                        background: #EBEFF5;
+                        color: #A0AEC0;
+
+                        &:hover {
+                            cursor: not-allowed;
+                        }
+                    }
+
+                    &:hover:not(.disabled) {
+                        transform: scale(1.05);
+                    }
+
+                    &:active:not(.disabled) {
+                        transform: scale(0.97);
+                    }
+                }
+            }
+
+            &::-webkit-scrollbar {
+                height: 9px;
+                background-color: #f8f9fa;
+                border-top-right-radius: 16px;
+                border-bottom-right-radius: 16px;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(214, 222, 225, 0.53);
+                border-radius: 20px;
+                border: 0px solid transparent;
+                background-clip: content-box;
+                transition: transform 0.2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms;
+            }
+
+            &::-webkit-scrollbar-thumb:hover {
+                background-color: #ccd5d8;
+            }
+        }
+
+        & .kanban-skeleton-container {
+            max-height: calc(100vh - 13.2rem);
+
+            & .list-skeleton {
+                display: flex;
+                width: 100%;
+                height: 100%;
+                gap: 20px;
+                overflow: hidden;
+            }
+
+            & .item-skeleton {
+                display: flex;
+                flex-direction: column;
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 1rem;
+                gap: 15px;
+                width: 330px;
+                height: fit-content;
+                max-height: calc(100vh - 13.2rem);
+
+                & .ske-body {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+        }
+    }
+
+    & .default-progress-view {
+        display: flex;
+        justify-content: flex-end;
+        padding: 5px 20px;
+    }
+}
+
+.kanban-sort-dropdown,
+.kanban-filter-dropdown {
+    position: fixed;
+
+    & .sort-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 1rem;
+        width: 230px;
+        box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.08),
+            0 3px 6px -4px rgba(0, 0, 0, 0.12),
+            0 9px 28px 8px rgba(0, 0, 0, 0.05);
+
+        & .item-sort {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            color: #344767;
+            padding: 10px 12px;
+            border-radius: 10px;
+            gap: 10px;
+
+            &.active {
+                background: #e6f4ff;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background: #F3F5F9;
+            }
+        }
+    }
+}

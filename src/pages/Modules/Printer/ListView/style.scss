@@ -1,0 +1,111 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.container {
+ 
+    .content {
+        background-color: $white;
+     
+        padding: 50px 60px 50px 80px;
+       
+        .printer_flow {
+            border: 1px solid $info;
+            position: relative;
+
+            &_title {
+                background: $info-gradient;
+                font-size: 32px;
+                font-style: normal;
+                font-weight: 700;
+                line-height: normal;
+                text-align: center;
+                color: $white;
+                padding: 4px 41px 3px 41px;
+                position:  absolute;
+                border-radius: 8px 40px 8px 0px;
+                top: -23px;
+                left: -2px;
+            }
+            &_body {
+                &_inner {
+                    padding: 40px 40px 40px 40px;
+                    &_header {
+                        display: flex;
+                        justify-content: space-between;
+                        
+                        .page_litmit {
+                            color:  #282D4C;
+                            text-align: center;
+
+                            font-size: 16px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: normal;
+                        }
+                        .add-page-btn {
+                            background: $white;
+                            width: 100%;
+                            max-width: 128px;
+                            display: inline-flex;
+                            font-size: 14px;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            font-size: 14px;
+                            color: $info;
+                        }
+    
+                        .add-page-btn:hover {
+                            transition: all 0.15s ease;
+                        }
+                    }
+                    &_main {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 16px;
+                       
+                     
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-printer_list {
+    padding-top: 20px;
+    display: flex; /* Sử dụng flexbox */
+    flex-wrap: wrap; /* Cho phép xuống dòng khi không đủ không gian */
+    justify-content: space-between; /* Canh đều khoảng cách giữa các phần tử */
+    gap: 40px; /* Khoảng cách giữa các phần tử */
+    &_item {
+  
+        background: linear-gradient(270deg, #038F81 0%, #03D9C4 100%);
+        width: 100%;
+        max-width: 155px;
+        display: inline-flex;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: $white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 10px;
+        .printer_name {
+            white-space: nnowrap;
+        }
+        .printer_info {
+            display: flex;
+            gap: 20px;
+        }
+       
+    }
+    &_item:hover {
+        color: $white !important;
+        background: linear-gradient(270deg, #06C1AB 21.5%, #60FAB2 100%) !important;
+        border:none !important;
+    }
+}

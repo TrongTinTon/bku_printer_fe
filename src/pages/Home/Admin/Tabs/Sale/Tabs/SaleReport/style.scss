@@ -1,0 +1,84 @@
+.saleReport-container {
+    .grid-quotes {
+        grid-area: quotes;
+    }
+
+    .grid-quotesSuccess {
+        grid-area: quotesSuccess;
+    }
+
+    .grid-topQuotes {
+        grid-area: topQuotes;
+    }
+
+    .grid-SO {
+        grid-area: SO;
+    }
+
+    .grid-sales {
+        grid-area: sales;
+    }
+
+    .grid-topSales {
+        grid-area: topSales;
+    }
+
+    display: grid;
+    grid-template-columns: minmax(300px, 100%) minmax(300px, 100%) minmax(300px, 100%);
+    gap: 16px 16px;
+    grid-template-areas: "quotes quotesSuccess topQuotes"
+    "SO sales topSales";
+}
+
+@media screen and (max-width: 1650px) {
+    #root {
+        .saleReport-container {
+            grid-template-columns: repeat(2, minmax(300px, 50%));
+            grid-template-areas:
+                "quotes topQuotes"
+                "quotesSuccess SO"
+                "sales topSales"
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) and (min-width: 1550px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .saleReport-container {
+                grid-template-columns: repeat(3, minmax(300px, 100%));
+                grid-template-areas: "quotes quotesSuccess topQuotes"
+                    "SO sales topSales";
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #root {
+        .saleReport-container {
+            grid-template-columns: repeat(1, minmax(200px, 100%));
+            grid-template-areas:
+                "quotes"
+                "quotesSuccess"
+                "topQuotes"
+                "SO"
+                "sales"
+                "topSales"
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1050px) {
+    #root {
+        :has(.ant-layout-sider-collapsed) {
+            .saleReport-container {
+                grid-template-columns: repeat(2, minmax(300px, 50%));
+                grid-template-areas:
+                    "quotes quotesSuccess"
+                    "SO topQuotes"
+                    "sales topSales"
+            }
+        }
+    }
+}

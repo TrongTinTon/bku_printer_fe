@@ -1,0 +1,139 @@
+.pie-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    flex-direction: row;
+
+    .pie-diff-container {
+        width: 150px;
+        height: 1px;
+        top: 50%;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+
+        .pie-diff {
+            position: absolute;
+            font-size: 12px;
+            color: #33BA35;
+            margin-top: 57px;
+            z-index: 1;
+            cursor: default;
+        }
+    }
+
+    .error {
+        color: #F63A46 !important;
+    }
+
+
+    .pie-legend {
+        width: 100%;
+
+        .legend-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #EBEFF5;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            .group-name {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .marker {
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 20px;
+                }
+
+                .name {
+                    color: #252F40;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+
+            .group-value {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                .value {
+                    color: #64748B;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+
+                .diff {
+                    color: #33BA35;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+            }
+
+
+            &:hover {
+                opacity: 0.75;
+                cursor: pointer;
+            }
+        }
+
+        .hide {
+
+            & .name,
+            .value,
+            .diff {
+                color: #d8d8d8 !important;
+            }
+
+            & .marker {
+                background: #d8d8d8 !important;
+            }
+        }
+    }
+}
+
+.pie-legend-left {
+    flex-direction: row-reverse !important;
+}
+
+.pie-legend-bottom {
+    flex-direction: column !important;
+
+    & .pie-diff-container {
+        top: 39%;
+
+        & .pie-diff {
+            margin-top: 0px;
+        }
+    }
+
+
+    & .pie-legend {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        max-height: 150px;
+
+        & .legend-item {
+            max-width: 47%;
+
+            &:last-child {
+                border-bottom: 1px solid #EBEFF5;
+            }
+        }
+    }
+}
+
+.pie-legend-top {
+    flex-direction: column-reverse !important;
+}

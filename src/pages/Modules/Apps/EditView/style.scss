@@ -1,0 +1,298 @@
+@import "src/global/GlobalStyle/ColorStyle.scss";
+
+.ant-modal-root:has(.no-mask) {
+    .ant-modal-mask {
+        background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+}
+
+.edit-modal-app {
+    width: 98vw !important;
+    height: calc(100vh - 2rem) !important;
+
+    & .ant-modal-content {
+        height: 100%;
+        border-radius: 1rem;
+        background: #F8F9FA;
+        padding: 0;
+
+        & .modal-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            & .modal-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px 20px;
+                background: #fff;
+                border-radius: 1rem 1rem 0 0;
+                height: 65px;
+
+                & .header-left,
+                & .header-right {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+
+                    & .title {
+                        color: #344767;
+                        font-size: 20px;
+                        font-weight: 600;
+                        max-width: 300px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+
+                    & .btn-close {
+                        display: flex;
+                        align-items: center;
+                        font-size: 24px;
+                        color: #A0AEC0;
+                        transition: transform 0.2s ease;
+                        user-select: none;
+
+                        &:hover {
+                            cursor: pointer;
+                            transform: scale(1.15);
+                            color: $info;
+                        }
+
+                        &:active {
+                            transform: translateY(1.5px);
+                        }
+                    }
+                }
+
+                & .header-right {
+                    gap: 15px;
+
+                    & .input-search {
+                        width: 350px;
+                    }
+
+                }
+            }
+
+            & .modal-body {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                padding: 0 10px 0 20px;
+                height: calc(100vh - 10.5rem - 15px);
+                gap: 10px;
+                overflow-y: scroll;
+                overflow-x: hidden;
+
+                & .content-container {
+                    display: flex;
+                    gap: 20px;
+
+                    & .collapse-edit-content {
+                        width: calc(87% - 20px);
+
+                        & .collapse-custom {
+                            background: transparent;
+
+                            & .collapse-custom-item {
+                                background: #fff;
+                                margin-bottom: 1rem;
+                                border-radius: 1rem;
+                                border: none;
+                                padding: 0;
+                                box-shadow: 0px 3.5px 5.5px 0px rgba(200, 200, 200, 0.02);
+
+                                & .ant-collapse-header {
+                                    padding: 1rem;
+                                    border-bottom: 0px solid #e3e9f000;
+
+                                    & .ant-collapse-header-text {
+                                        font-size: 16px;
+                                        font-weight: 450;
+                                        color: #344767;
+
+                                        & .active {
+                                            color: $info;
+                                        }
+                                    }
+
+                                    &:has(.active) {
+                                        & .arrow-collapse {
+                                            color: $info !important;
+                                        }
+                                    }
+                                }
+
+                                & .ant-collapse-header:has(.arrow-active) {
+                                    border-bottom: 1px solid #e3e9f0c5 !important;
+                                }
+
+                                & .arrow-collapse {
+                                    font-size: 16px;
+                                    color: #344767;
+                                    transition: all 0.2s ease-in-out;
+                                    transform: rotate(-90deg);
+
+                                    &.arrow-active {
+                                        transform: rotate(0deg);
+                                    }
+                                }
+
+                                & .ant-collapse-content {
+                                    & .ant-collapse-content-box {
+                                        padding: 20px;
+                                    }
+                                }
+
+                                & .block-container {
+                                    & .block-row {
+                                        display: flex;
+                                        flex-wrap: wrap;
+                                        gap: 20px;
+                                        width: 100%;
+
+                                        & .group-field {
+                                            display: flex;
+                                            align-items: flex-start;
+                                            justify-content: flex-end;
+                                            gap: 10px;
+                                            width: calc(50% - 10px);
+                                            padding: 0px 10px;
+                                            transition: all 0.2s ease-in-out;
+
+                                            & .item-label {
+                                                width: calc(30% - 5px);
+                                                height: 40px;
+                                                font-weight: 400;
+                                                color: #919bac;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: flex-end;
+                                                text-align: right;
+
+                                                & .icon-required {
+                                                    color: $error;
+                                                    padding-right: 5px;
+                                                }
+                                            }
+
+                                            & .group-item-value {
+                                                display: flex;
+                                                align-items: center;
+                                                gap: 12px;
+                                                width: calc(70% - 5px);
+                                                position: relative;
+
+                                                & .ant-form-item {
+                                                    width: 100%;
+                                                    margin-bottom: 0px;
+
+                                                    & .ant-form-item-explain {
+                                                        position: absolute;
+                                                        width: fit-content;
+                                                        right: -20px;
+                                                        top: 0;
+                                                        height: 100%;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                        z-index: 10;
+
+                                                        & .ant-form-item-explain-error {
+                                                            padding: 0;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    & .anchor-edit-content {
+                        width: 13%;
+
+                        &.hidden {
+                            display: none !important;
+                        }
+
+                        & .anchor-custom {
+                            & .ant-anchor-link {
+                                padding: 10px 20px 10px 15px;
+                                transition: all 0.2s ease-in-out;
+                                border-radius: 10px;
+                                margin-left: 5px;
+                                border-left: 3px solid transparent;
+
+                                & .ant-anchor-link-title {
+                                    color: #344767
+                                }
+                            }
+
+                            & .ant-anchor-link-active {
+                                background-color: #E7F1FF;
+                                border-left: 3px solid $info;
+                                transform: scale(1.025);
+
+                                & .ant-anchor-link-title {
+                                    color: $info
+                                }
+                            }
+
+                            & .ant-anchor {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+
+                            & .ant-anchor-ink {
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+
+                &::-webkit-scrollbar {
+                    width: 10px;
+                    background-color: transparent;
+                    border-bottom-right-radius: 16px;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: rgba(214, 222, 225, 1);
+                    border-radius: 20px;
+                    background-clip: content-box;
+                    transition: transform .2s ease, background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 200ms
+                }
+
+                &::-webkit-scrollbar-thumb:hover {
+                    background-color: #ccd5d8;
+                }
+            }
+
+            & .modal-footer {
+                position: absolute;
+                background-color: #f8f9fa;
+                bottom: 0;
+                border-radius: 0 0 1rem 1rem;
+                width: 100%;
+                z-index: 20;
+                padding-top: 10px;
+
+                & .btn-group {
+                    height: 65px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #fff;
+                    border-radius: 0 0 1rem 1rem;
+                }
+            }
+        }
+    }
+}
